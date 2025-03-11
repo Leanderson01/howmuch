@@ -66,19 +66,22 @@ const SceneController: React.FC = () => {
     // Também podemos adicionar lógica para pré-carregar recursos da próxima cena
   }, [currentScene]);
   
-  // Variantes de animação para transições
+  // Variantes de animação para transições com zoom
   const variants = {
     enter: (direction: 'next' | 'prev') => ({
-      x: direction === 'next' ? '100%' : '-100%',
-      opacity: 0
+      scale: direction === 'next' ? 0.2 : 1.8,
+      opacity: 0,
+      z: direction === 'next' ? -100 : 100
     }),
     center: {
-      x: 0,
-      opacity: 1
+      scale: 1,
+      opacity: 1,
+      z: 0
     },
     exit: (direction: 'next' | 'prev') => ({
-      x: direction === 'next' ? '-100%' : '100%',
-      opacity: 0
+      scale: direction === 'next' ? 1.8 : 0.2,
+      opacity: 0,
+      z: direction === 'next' ? 100 : -100
     })
   };
   
@@ -103,7 +106,7 @@ const SceneController: React.FC = () => {
   };
   
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="w-full h-screen overflow-hidden perspective-1000">
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={currentScene}
@@ -113,10 +116,17 @@ const SceneController: React.FC = () => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: 'spring', stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 }
+            type: 'tween',
+            duration: 1.2,
+            ease: [0.16, 1, 0.3, 1] // Curva de easing suave
           }}
           className="w-full h-full"
+          style={{ 
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            transformStyle: 'preserve-3d'
+          }}
         >
           {renderScene()}
         </motion.div>

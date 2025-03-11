@@ -45,7 +45,7 @@ const Final: React.FC<FinalProps> = ({ onNavigatePrev, onRestart }) => {
       
       {/* Conteúdo principal */}
       <motion.div 
-        className="z-20 text-center p-8 bg-black bg-opacity-40 rounded-lg max-w-3xl text-white backdrop-blur-sm"
+        className="z-20 text-center p-8 bg-black bg-opacity-30 rounded-lg max-w-3xl text-white backdrop-blur-sm"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1.5 }}
@@ -81,7 +81,7 @@ const Final: React.FC<FinalProps> = ({ onNavigatePrev, onRestart }) => {
       
       <div className="absolute bottom-10 flex space-x-10 z-20">
         <motion.button
-          className="bg-white bg-opacity-20 p-3 rounded-full text-white"
+          className="bg-white bg-opacity-20 p-3 rounded-full text-white backdrop-blur-sm"
           whileHover={{ scale: 1.1 }}
           onClick={onNavigatePrev}
         >
@@ -91,7 +91,7 @@ const Final: React.FC<FinalProps> = ({ onNavigatePrev, onRestart }) => {
         </motion.button>
         
         <motion.button
-          className="bg-white bg-opacity-20 p-3 rounded-full text-white"
+          className="bg-white bg-opacity-20 p-3 rounded-full text-white backdrop-blur-sm"
           whileHover={{ scale: 1.1 }}
           onClick={onRestart}
         >
