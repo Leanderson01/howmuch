@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quanto Eu Te Amo?
 
-## Getting Started
+Um site interativo e romântico que leva sua namorada por uma jornada visual e sonora, demonstrando a imensidão do seu amor através de uma experiência imersiva que passa por diferentes escalas do universo.
 
-First, run the development server:
+## Visão Geral
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Este projeto é uma experiência interativa que começa com a pergunta "Quanto Eu Te Amo?" e leva o usuário por uma jornada através de diferentes escalas do universo:
+
+1. **Terra**: O início da jornada, mostrando que o amor é maior que nosso planeta
+2. **Sistema Solar**: Expandindo para mostrar que o amor é maior que todo o sistema solar
+3. **Via Láctea**: Ampliando ainda mais para mostrar que o amor é maior que nossa galáxia
+4. **Universo**: Mostrando que o amor é tão vasto quanto todo o universo
+5. **Final**: Uma cena inspirada em Cristo, com o versículo que reforça o amor do homem pela mulher
+
+## Tecnologias Utilizadas
+
+- **Next.js**: Framework React para renderização e roteamento
+- **Tailwind CSS**: Estilização e responsividade
+- **Framer Motion**: Animações e transições suaves
+- **Howler.js**: Efeitos sonoros e música de fundo
+- **Canvas API**: Animações de partículas e efeitos visuais
+
+## Estrutura do Projeto
+
+```
+/howmuch
+  /app
+    /components
+      /scenes
+        Opening.tsx
+        Earth.tsx
+        SolarSystem.tsx
+        MilkyWay.tsx
+        Universe.tsx
+        Final.tsx
+      /controllers
+        SceneController.tsx
+        AudioController.tsx
+    /types
+      media.d.ts
+    page.tsx
+    layout.tsx
+    globals.css
+  /public
+    /assets
+      /images
+      /sounds
+      /videos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como Executar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone o repositório
+2. Instale as dependências:
+   ```bash
+   bun install
+   ```
+3. Execute o servidor de desenvolvimento:
+   ```bash
+   bun dev
+   ```
+4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Recursos Adicionais
 
-## Learn More
+- **Easter Eggs**: O site contém mensagens e interações ocultas que podem ser descobertas
+- **Controle de Som**: Botão para ativar/desativar o som
+- **Navegação Intuitiva**: Botões para navegar entre as cenas
+- **Animações Responsivas**: Experiência otimizada para diferentes dispositivos
 
-To learn more about Next.js, take a look at the following resources:
+## Personalização
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Você pode personalizar o site adicionando:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Fotos do casal em diferentes cenas
+- Mensagens personalizadas
+- Sons e músicas específicas
+- Referências a datas e momentos especiais
 
-## Deploy on Vercel
+## Licença
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este projeto é para uso pessoal e não possui licença específica.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Feito com ❤️ para demonstrar um amor que é maior que o universo.
