@@ -66,6 +66,30 @@ const SceneController: React.FC = () => {
     // Também podemos adicionar lógica para pré-carregar recursos da próxima cena
   }, [currentScene]);
   
+  // Event listener para navegação com as teclas de seta
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      switch (event.key) {
+        case 'ArrowRight':
+        case 'ArrowDown':
+          navigateNext();
+          break;
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          navigatePrev();
+          break;
+      }
+    };
+    
+    // Adiciona o event listener
+    window.addEventListener('keydown', handleKeyDown);
+    
+    // Remove o event listener quando o componente é desmontado
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [currentScene, navigateNext, navigatePrev]); // Re-adiciona o listener quando a cena muda
+  
   // Variantes de animação para transições com zoom
   const variants = {
     enter: (direction: 'next' | 'prev') => ({

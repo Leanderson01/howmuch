@@ -18,27 +18,28 @@ const Opening: React.FC<OpeningProps> = ({ onNavigateNext }) => {
       </motion.h1>
       
       <motion.div
-        className="mt-16 cursor-pointer"
+        className="mt-16 flex items-center justify-center cursor-pointer"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
         whileHover={{ scale: 1.1 }}
         onClick={onNavigateNext}
       >
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="48" 
-          height="48" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-          className="animate-bounce"
-        >
-          <path d="M12 5v14M5 12l7 7 7-7"/>
-        </svg>
+        <div className="bg-black bg-opacity-40 p-3 rounded-full text-white shadow-lg animate-bounce backdrop-blur-sm">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="36" 
+            height="36" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="white" 
+            strokeWidth="3" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
       </motion.div>
     </div>
   );
